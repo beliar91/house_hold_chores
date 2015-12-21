@@ -1,5 +1,7 @@
 <%= form_for(@house_hold) do |house_hold| %>
 
+<%= render 'errors' %>
+
 <div class="field">
 <%= house_hold.label :name %>
 <%= house_hold.text_field :name %>

@@ -20,7 +20,11 @@ class HouseHoldsController < ApplicationController
   def create
     @house_hold = HouseHold.create(house_hold_params)
 
-    redirect_to @house_hold if @house_hold.save
+    if @house_hold.save
+      redirect_to @house_hold
+    else
+      render :new
+    end
   end
 
   def update
