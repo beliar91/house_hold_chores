@@ -45,3 +45,7 @@ group :development do
   gem 'spring'
 end
 
+#my gems start here
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
