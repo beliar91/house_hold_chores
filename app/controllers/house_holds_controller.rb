@@ -28,6 +28,8 @@ class HouseHoldsController < ApplicationController
   end
 
   def destroy
+    @house_hold.destroy
+    redirect_to house_holds_url
   end
 
   private
