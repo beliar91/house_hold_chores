@@ -34,6 +34,8 @@ class PeopleController < ApplicationController
   def update
     if @person.update(people_params)
       redirect_to @person, notice: "Person was successfully updated"
+    else
+      render :edit
     end
   end
 

@@ -28,7 +28,11 @@ class HouseHoldsController < ApplicationController
   end
 
   def update
-    redirect_to @house_hold, notice: 'House Hold was successfully updated' if @house_hold.update(house_hold_params)
+    if @house_hold.update(house_hold_params)
+      redirect_to @house_hold, notice: 'House Hold was successfully updated'
+    else
+      render :edit
+    end
   end
 
   def destroy
