@@ -15,6 +15,7 @@
 .bundle/*
 !.bundle/config
 config/application.yml
+config/database.yml
 .chef
 .vagrant
 /public/assets
