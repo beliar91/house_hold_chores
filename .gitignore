@@ -9,7 +9,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-!/log/.keep
+/log/.keep
 /tmp
 .idea/
 .bundle/*
@@ -19,6 +19,7 @@ config/database.yml
 .chef
 .vagrant
 /public/assets
+/public/*
 *.com
 *.class
 *.dll
