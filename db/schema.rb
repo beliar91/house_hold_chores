@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206001826) do
+ActiveRecord::Schema.define(version: 20151221202940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "house_holds", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.integer  "house_hold_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +37,7 @@ ActiveRecord::Schema.define(version: 20151206001826) do
     t.integer  "avg_completion_time", default: 0
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "house_hold_id"
   end
 
 end

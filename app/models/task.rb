@@ -5,7 +5,7 @@ class Task < ActiveRecord::Base
   scope :tasks_by_status, -> (status) {where(status: status)}
   after_create :count_average_execution_time_for_tasks
 
-
+  belongs_to :house_hold
 
 
   private
