@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'people/new'
+
+  get 'people/index'
+
+  get 'people/edit'
+
   resources :house_holds
+  resources :people
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

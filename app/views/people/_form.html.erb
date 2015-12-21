@@ -1,0 +1,24 @@
+<%= form_for(@person) do |p| %>
+
+<%= render 'errors' %>
+
+<div class="field">
+  <%= p.label :name %> <br>
+  <%= p.text_field :name %>
+</div>
+
+<div class="field">
+  <%= p.label :surname %> <br>
+  <%= p.text_field :surname %>
+</div>
+
+<div class="field">
+
+  <%= p.hidden_field :house_hold_id %> <br>
+  <%=  p.collection_select :house_hold_id, HouseHold.all, :id, :name, {:prompt => "Pick House Hold"} %>
+
+</div>
+
+<p><%= p.submit "Save" %></p>
+
+<% end %>

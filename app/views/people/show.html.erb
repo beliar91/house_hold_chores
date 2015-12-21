@@ -1,0 +1,6 @@
+<h1>Displaying Person</h1>
+<p><b>Full name: </b><%= @person %></p>
+<p><b>Belongs to House Hold: </b><%= @person.house_hold %></p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
