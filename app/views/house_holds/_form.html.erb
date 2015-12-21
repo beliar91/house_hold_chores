@@ -1,0 +1,10 @@
+<%= form_for(@house_hold) do |house_hold| %>
+
+<div class="field">
+<%= house_hold.label :name %>
+<%= house_hold.text_field :name %>
+</div>
+
+<p><%= house_hold.submit "Save" %></p>
+
+<% end %>

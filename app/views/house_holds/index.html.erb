@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing your House Holds</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @house_holds.each do |house_hold| %>
+      <tr>
+        <td><%= house_hold.name %></td>
+        <td><%= link_to 'Show', house_hold %></td>
+        <td><%= link_to 'Edit', edit_house_hold_path(house_hold) %></td>
+        <td><%= link_to 'Destroy', house_hold, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New House Hold', new_house_hold_path %>
