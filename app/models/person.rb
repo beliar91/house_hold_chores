@@ -13,7 +13,7 @@ class Person < ActiveRecord::Base
   private
 
   def house_hold_must_be_chosen
-    errors.add(:house_hold_id, "must be chosen") if self.house_hold_id.blank?
+    errors.add("A house hold ", "must be chosen") if self.house_hold_id.blank?
   end
 
 

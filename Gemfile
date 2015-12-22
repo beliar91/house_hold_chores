@@ -49,3 +49,4 @@ end
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'devise'

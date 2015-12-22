@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'people/new'
+  root 'home_pages#main_page'
 
-  get 'people/index'
-
-  get 'people/edit'
-
+  devise_for :users
   resources :house_holds
   resources :people
 

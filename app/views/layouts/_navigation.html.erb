@@ -1,0 +1,6 @@
+<% if signed_in? %>
+<%= link_to "House Holds", house_holds_path %>
+<%= link_to "People", people_path %>
+<%= link_to "Your profile", edit_user_registration_path %>
+<%= link_to "Log out", destroy_user_session_path, method: :delete, notice: 'Logged out' %>
+<% end %>

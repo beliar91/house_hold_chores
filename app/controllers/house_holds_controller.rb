@@ -19,6 +19,8 @@ class HouseHoldsController < ApplicationController
 
   def create
     @house_hold = HouseHold.create(house_hold_params)
+    @house_hold.user_id = current_user.id
+
 
     if @house_hold.save
       redirect_to @house_hold
@@ -47,7 +49,7 @@ class HouseHoldsController < ApplicationController
   end
 
   def house_hold_params
-    params.require(:house_hold).permit(:name)
+    params.require(:house_hold).permit(:name, :user_id)
   end
 
 
