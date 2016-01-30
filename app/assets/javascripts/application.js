@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require moment
 //= require fullcalendar
+//= require loop/js/
 //= require_tree .
 
 $(document).ready(function() {
