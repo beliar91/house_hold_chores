@@ -3,14 +3,14 @@ class Task < ActiveRecord::Base
 
   validates :status, inclusion: {in: ["Created", "In Progress", "Completed"]}
   scope :tasks_by_status, -> (status) {where(status: status)}
-  after_create :count_average_execution_time_for_tasks
+  after_create :count_average_execution_time
 
   belongs_to :house_hold
 
 
-  private
 
-  def count_average_execution_time_for_tasks
+
+  def count_average_execution_time
       tasks = Task.tasks_by_status(self.status)
 
       sum = 0

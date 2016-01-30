@@ -20,6 +20,9 @@ module HouseHoldChores
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.generators do |g|
+      g.test_framework :rspec, :fixture_replacement => :factory_girl, :views => false, :helper => false
+      g.view_specs false
+      g.helper_specs false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
     end
     # Do not swallow errors in after_commit/after_rollback callbacks.
