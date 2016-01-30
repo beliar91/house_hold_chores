@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :task do |t|
     t.completion_time 10
     name "Test"
-   
+
     trait :created do
       status "Created"
     end
