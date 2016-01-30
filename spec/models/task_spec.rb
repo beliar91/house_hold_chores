@@ -9,16 +9,21 @@ RSpec.describe Task, type: :model do
   let(:task_in_progress_1) {FactoryGirl.create(:task_in_progress_1)}
   let(:task_in_progress_2) {FactoryGirl.create(:task_in_progress_2)}
 
-  pending "This test needs improvement" do
+
 
   it "Counting average execution time should return proper results" do
-    task_created_3.count_average_execution_time
-    task_created_1.count_average_execution_time
-    task_in_progress_2.count_average_execution_time
-    expect(task_created_2.count_average_execution_time).to eq(40)
-    expect(task_in_progress_1.count_average_execution_time).to eq(45)
+    task_1 = Task.create(name: "ABCD", status: "Created", completion_time:30)
+    task_2 = Task.create(name: "ABCDE", status: "Created", completion_time: 70)
+
+    sum_of_completion_time = task_1.completion_time + task_2.completion_time
+    number_of_tasks = Task.all.count
+
+    average_execution_time = sum_of_completion_time / number_of_tasks
+
+    expect(average_execution_time).to eq(task_2.count_average_execution_time)
+
   end
-  end
+  
 
   it "Task name cannot be blank" do
     task1 = Task.new()
