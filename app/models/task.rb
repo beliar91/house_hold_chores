@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
 
 
   validates :status, inclusion: {in: ["Created", "In Progress", "Completed"]}
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   scope :tasks_by_status, -> (status) {where(status: status)}
   after_create :count_average_execution_time
 
