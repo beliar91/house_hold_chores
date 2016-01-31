@@ -25,6 +25,12 @@ RSpec.describe Task, type: :model do
     expect(task1.errors.messages[:name]).to eq(["can't be blank"])
   end
 
+  it "Task completion_time cannot be blank" do
+    task1 = Task.new(name: "AYC")
+    expect(task1.save).to eq(false)
+    expect(task1.errors.messages[:completion_time]).to eq(["can't be blank"])
+  end
+
   it "Two tasks cannot have identical names" do
     task1 = Task.create(name: "ABC", completion_time: 10, status: "Created")
     task2 = Task.new(name: "ABC", completion_time: 10, status: "Created")
@@ -38,10 +44,6 @@ RSpec.describe Task, type: :model do
     expect( task_created_3.save).to eq(true)
   end
 
-  it "Task completion_time cannot be blank" do
-    task1 = Task.new(name: "AYC")
-    expect(task1.save).to eq(false)
-    expect(task1.errors.messages[:completion_time]).to eq(["can't be blank"])
-  end
+
 
 end
