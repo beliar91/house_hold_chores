@@ -6,28 +6,18 @@ class Task < ActiveRecord::Base
   validates :completion_time, presence: true
 
   #scopes:
-  scope :tasks_by_status, -> (status) {where(status: status)}
-
-  #callbacks:
-  after_create :count_average_execution_time
+  scope :by_status, -> (status) {where(status: status)}
 
   #associations:
   belongs_to :house_hold
 
 
-
-
-  def count_average_execution_time
-      tasks = Task.tasks_by_status(self.status)
-
-      sum = 0
-      tasks.each do |task|
-        sum+= task.completion_time
-      end
-      number_of_tasks = Task.tasks_by_status(self.status).count
-      average = sum / number_of_tasks
-      p "Average execution time for task with status: #{self.status} is " << average.to_s
-      self.avg_completion_time = average
+  def self.count_average_execution_time(status)
+    sum_of_tasks_by_status = Task.by_status(status).inject(0) {|sum, task| sum += task.completion_time }
+    number_of_tasks = Task.by_status(status).count
+    average = sum_of_tasks_by_status / number_of_tasks
+    p "Average execution time for tasks with status: #{status} is " << average.to_s
+    average
   end
 
 

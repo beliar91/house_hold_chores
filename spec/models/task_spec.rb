@@ -14,9 +14,10 @@ RSpec.describe Task, type: :model do
 
     average_execution_time = sum_of_completion_time / number_of_tasks
 
-    expect(average_execution_time).to eq(task_2.count_average_execution_time)
+    expect(average_execution_time).to eq(Task.count_average_execution_time("Created"))
 
   end
+
 
 
   it "Task name cannot be blank" do
