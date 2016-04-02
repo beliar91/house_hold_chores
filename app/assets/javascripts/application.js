@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.min
 //= require twitter/bootstrap
+//= require bootstrap.min
+//= require grayscale
 //= require turbolinks
 //= require moment
 //= require fullcalendar

@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   let(:user) {FactoryGirl.create(:user)}
+  #TODO add a test for a user updating his password or email
 
   it "Email must be valid" do
     user = User.new(email: "abc")
