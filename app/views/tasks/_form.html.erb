@@ -31,6 +31,15 @@
       <%=f.error_span(:completion_time) %>
     </div>
 
+
+   <div class="form-group">
+      <%= f.label :scheduled_for, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10 table_text_allign">
+        <%= f.date_select :scheduled_for, class: 'form-control ' %>
+      </div>
+      <%=f.error_span(:scheduled_for) %>
+    </div>
+
     <!--<div class="form-group">-->
     <!--</div>-->
 

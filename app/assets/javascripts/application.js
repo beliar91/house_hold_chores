@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require jquery.easing.min
 //= require twitter/bootstrap
 //= require bootstrap.min
 //= require grayscale
-//= require turbolinks
 //= require moment
 //= require fullcalendar
 //= require_tree .
@@ -29,4 +29,6 @@ $(document).ready(function() {
         // put your options and callbacks here
     })
 
-});
+
+   });
+
