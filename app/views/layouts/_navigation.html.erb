@@ -1,6 +1,16 @@
 <% if signed_in? %>
-<%= link_to "House Holds", house_holds_path %>
-<%= link_to "People", people_path %>
-<%= link_to "Your profile", edit_user_registration_path %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete, notice: 'Logged out' %>
+<li><%= link_to "House Holds", house_holds_path %></li>
+<li><%= link_to "People", people_path %></li>
+<li><%= link_to "Your profile", edit_user_registration_path %></li>
+<li><%= link_to "Log out", destroy_user_session_path, method: :delete, notice: 'Logged out' %></li>
+<% else %>
+
+<li>
+  <a class="page-scroll" href="#about">About</a>
+</li>
+
+<li>
+  <a class="page-scroll" href="#contact">Contact</a>
+</li>
+
 <% end %>

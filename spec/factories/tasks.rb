@@ -4,9 +4,6 @@ FactoryGirl.define do
     t.completion_time 10
     name "Test"
 
-    trait :created do
-      status "Created"
-    end
 
     trait :in_progress do
       status "In Progress"
@@ -39,7 +36,7 @@ FactoryGirl.define do
     end
 
     #define factories with different traits here
-    factory :task_created_3, traits: [:created]
+    factory :task_created_3
 
   end
 
