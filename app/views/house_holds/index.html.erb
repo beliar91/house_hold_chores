@@ -4,29 +4,27 @@
 </div>
 <table class="table table-striped">
   <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+    <tr class>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @house_holds.each do |house_hold| %>
-      <tr>
-        <td><%= link_to house_hold.id, house_hold_path(house_hold) %></td>
-        <td><%= house_hold.name %></td>
-        <td><%= house_hold.user_id %></td>
-        <td><%=l house_hold.created_at %></td>
-        <td>
+      <tr class="inherit_table_bg_color">
+        <td class="table_text_allign"><%= house_hold.name %></td>
+        <td class="table_text_allign"><%= house_hold.address %></td>
+        <td class="table_text_allign">
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      house_hold_path(house_hold), :class => 'btn btn-default btn-xs ' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_house_hold_path(house_hold), :class => 'btn btn-default btn-xs' %>
+                      edit_house_hold_path(house_hold), :class => 'btn btn-default btn-xs ' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       house_hold_path(house_hold),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => 'btn btn-xs btn-danger table_text_allign' %>
         </td>
       </tr>
     <% end %>

@@ -49,7 +49,7 @@ class HouseHoldsController < ApplicationController
   end
 
   def house_hold_params
-    params.require(:house_hold).permit(:name, :user_id)
+    params.require(:house_hold).permit(:name, :address, :user_id)
   end
 
 
