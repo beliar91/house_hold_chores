@@ -1,12 +1,13 @@
 class Task < ActiveRecord::Base
 
   #validations:
-  validates :status, inclusion: {in: ["Created", "In Progress", "Completed"]}
   validates :name, presence: true, uniqueness: true
   validates :completion_time, presence: true
 
   #scopes:
-  scope :by_status, -> (status) {where(status: status)}
+  scope :by_status, -> (status) {where(complete: status)}
+  scope :completed, -> {where complete: true}
+  scope :pending, -> {where complete: false}
 
   #associations:
   belongs_to :house_hold

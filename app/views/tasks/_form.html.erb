@@ -1,0 +1,6 @@
+<%= form_for @task, remote: true do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_field :completion_time %>
+    <%= f.submit %>
+<% end %>
+
