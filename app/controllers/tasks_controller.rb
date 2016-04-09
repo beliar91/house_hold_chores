@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:edit, :update, :delete, :show, :destroy]
+  before_action :find_task, only: [:edit, :update, :delete, :show]
 
   def create
     @task = Task.create(task_params)
@@ -19,6 +19,15 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+  end
+
+  def destroy
+    @task = Task.destroy(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to tasks_url}
+      format.js
+    end
   end
 
   private

@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 <h1>Tasks</h1>
 
-<%= link_to "New Task", new_task_path, id: 'task_show', remote: true %>
+<%= link_to "New Task", new_task_path, id: 'task_show', remote: true, :class => 'btn btn-default' %>
+
+</br>
 
 <h2>Incomplete Tasks</h2>
 <div class="tasks" id="incomplete_tasks">
@@ -10,5 +12,5 @@
 
 <h2>Comlpete Tasks</h2>
 <div class="tasks" id="complete_tasks">
-  <%= render @complete_tasks %>
+  <%= render @completed_tasks %>
 </div>
