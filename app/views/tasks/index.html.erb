@@ -3,14 +3,13 @@
 
 <%= link_to "New Task", new_task_path, id: 'task_show', remote: true, :class => 'btn btn-default' %>
 
-</br>
-
-<h2>Incomplete Tasks</h2>
+<br>
+<h2 class="incomplete_task_color">Incomplete Tasks</h2>
 <div class="tasks" id="incomplete_tasks">
   <%= render @incomplete_tasks %>
 </div>
 
-<h2>Comlpete Tasks</h2>
+<h2 class="complete_space completed_task_color">Completed Tasks</h2>
 <div class="tasks" id="complete_tasks">
   <%= render @completed_tasks %>
 </div>

@@ -1,3 +1,19 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn {
+  margin-bottom: 30px!important;
+}
+
+.complete_space {
+  margin-top: 30px!important;
+}
+
+.incomplete_task_color {
+  color: red!important;
+}
+
+.completed_task_color {
+  color: green!important;
+}
