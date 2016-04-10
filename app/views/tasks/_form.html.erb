@@ -40,6 +40,14 @@
       <%=f.error_span(:scheduled_for) %>
     </div>
 
+    <div class="form-group">
+      <%= f.label :person_responsible, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10 table_text_allign">
+        <%= f.collection_select :person_id, current_user.people, :id, :to_s,  :class => 'form-control' %>
+      </div>
+      <%=f.error_span(:completion_time) %>
+    </div>
+
     <!--<div class="form-group">-->
     <!--</div>-->
 

@@ -12,6 +12,7 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.create(people_params)
+    @person.user_id = current_user.id
     if @person.save
       redirect_to @person
     else
@@ -46,7 +47,7 @@ class PeopleController < ApplicationController
   end
 
   def people_params
-    params.require(:person).permit(:name, :surname, :house_hold_id)
+    params.require(:person).permit(:name, :surname, :user_id, :house_hold_id)
   end
 
 end

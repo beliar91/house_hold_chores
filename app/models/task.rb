@@ -10,7 +10,7 @@ class Task < ActiveRecord::Base
   scope :pending, -> {where complete: false}
 
   #associations:
-  belongs_to :house_hold
+  belongs_to :person
 
 
   def self.count_average_execution_time(status)
